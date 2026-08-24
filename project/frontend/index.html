@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevOps Week 1</title>
+  <style>
+    body{font-family:system-ui,sans-serif;max-width:760px;margin:64px auto;padding:0 20px;background:#f4f8fb;color:#102a43}
+    main{background:white;padding:32px;border-radius:16px;box-shadow:0 10px 30px #102a4320}
+    button{background:#0f766e;color:white;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
+    pre{background:#102a43;color:#d9f3f0;padding:16px;border-radius:8px;overflow:auto}
+  </style>
+</head>
+<body><main>
+  <h1>Cloud Native SaaS · Week 1</h1>
+  <p>Browser → Nginx → API → PostgreSQL + Redis</p>
+  <button id="call">Call API</button>
+  <pre id="output">Click the button to test the request path.</pre>
+</main><script>
+document.querySelector('#call').onclick=async()=>{
+  const output=document.querySelector('#output');
+  try { const r=await fetch('/api/info'); output.textContent=JSON.stringify(await r.json(),null,2); }
+  catch(e) { output.textContent=String(e); }
+};
+</script></body></html>
+

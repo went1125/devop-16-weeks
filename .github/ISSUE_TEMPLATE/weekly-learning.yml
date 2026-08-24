@@ -1,0 +1,30 @@
+name: Weekly learning
+description: Track one weekly learning outcome
+title: "[Week XX] "
+labels: [learning]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What observable capability will exist when this is done?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: "- [ ] Given / When / Then"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: PR, command output, screenshot, diagram, or runbook
+  - type: textarea
+    id: retro
+    attributes:
+      label: Retrospective
+      description: What changed in your mental model?
+
